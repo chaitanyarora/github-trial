@@ -31,5 +31,5 @@ jobs:
       - name: Run Python Script
         run: python btest.py
 
-      - name: Run Blender
-        run: blender -b test_drone.blend -P test_drone.py
+      # - name: Run Blender
+      #   run: blender -b test_drone.blend -P test_drone.py

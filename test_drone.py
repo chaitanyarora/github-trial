@@ -30,10 +30,12 @@ bpy.ops.object.sphere_grid()
 
 # Test 1: (Sphere Grid) Check if spheres are added successfully
 if bpy.data.objects.get('1') or bpy.data.objects.get('1EL'):
+    print("BHAI HAIIIIIII")
     timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
     with open(log_file, 'a') as file:
         file.write(f'{timestamp} Test passed ✅ - sphere grid\n')
 else:
+    print("BHAI HAIIIIIII partyyyy NOOO")
     timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
     with open(log_file, 'a') as file:
         file.write(f'{timestamp} Test failed ❌ - sphere grid\n')
@@ -44,10 +46,12 @@ bpy.ops.object.reset_scene()
 
 # Test 2: (Reset) Check if collection is empty or not
 if len(bpy.data.collections)==0:
+    print("BHAI HAIIIIIII partyyyy")
     timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
     with open(log_file, 'a') as file:
         file.write(f'{timestamp} Test passed ✅ - reset\n')
 else:
+    print("BHAI HAIIIIIII NOOOO")
     timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
     with open(log_file, 'a') as file:
         file.write(f'{timestamp} Test failed ❌ - reset\n')
