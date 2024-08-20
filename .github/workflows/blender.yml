@@ -25,7 +25,8 @@ jobs:
           pwd
           wget -c -O blender-4.2.0-linux-x64 https://ftp.halifax.rwth-aachen.de/blender/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz
           tar -xvf blender-4.2.0-linux-x64
-          sudo apt-get install mesa libglu1-mesa
+          sudo apt-get update
+          sudo apt-get install libegl1-mesa
           cd blender-4.2.0-linux-x64
           echo "Something"
           pwd
