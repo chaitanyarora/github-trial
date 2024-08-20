@@ -14,7 +14,7 @@ print("TEST SC FILE PATH", test_script_paths)
 def test():
     for x in range(len(test_script_paths)):
 
-        blender_command = [blender_executable, blend_file_paths[x], '-P', test_script_paths[x]]
+        blender_command = [blender_executable, blend_file_paths[x], '-b','-P', test_script_paths[x]]
         print("BLENDER_COMMAN", blender_command)
 
         try:
