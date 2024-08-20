@@ -24,6 +24,9 @@ jobs:
           # mkdir /home/runner/work/chaitany
           tar -xvf blender-4.2.0-linux-x64
           echo "PARTY"
+          cd blender-4.2.0-linux-x64
+          echo "something"
+          pwd
           ls
 
       - name: Run Python Script
