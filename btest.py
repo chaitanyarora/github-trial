@@ -5,6 +5,7 @@ import os
 cwd = os.path.dirname(os.path.abspath(__file__))
 
 blender_executable = os.environ.get("PATH")
+print("BUNTTUTBUBUD", os.environ.get("PATH"))
 blend_file_paths = [os.path.join(cwd, 'test_input', 'test_drone.blend')]
 test_script_paths = [os.path.join(cwd, 'test_cases', 'test_drone.py')]
 
