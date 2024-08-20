@@ -26,6 +26,11 @@ jobs:
           tar -xvf blender-4.2.0-linux-x64
           sudo apt-get update
           sudo apt-get install libegl1-mesa
+      
+      - name: Install Scipy
+        run: |
+          cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
+          python -m pip install scipy
      
       - name: Install Addon
         run: python install_plugin.py
