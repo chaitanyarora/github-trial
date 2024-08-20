@@ -2,7 +2,7 @@ name: Run Blender with Python Script
 
 on:
   push:
-    branches: [ main ]  # Replace with the branch(es) you want to trigger the workflow
+    branches: [ main, trial ]  # Replace with the branch(es) you want to trigger the workflow
 
 jobs:
   build:
