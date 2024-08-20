@@ -2,7 +2,7 @@ name: Run Blender with Python Script
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]  # Replace with the branch(es) you want to trigger the workflow
 
 jobs:
   build:
@@ -14,22 +14,27 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: '3.9'  # Replace with your desired Python version
 
-      # Install Blender (replace with your preferred method)
-      - name: Install Blender
-        run: |
-          wget -c -O blender-4.2.0-linux-x64.tar https://ftp.halifax.rwth-aachen.de/blender/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz
-          tar -xvf blender-4.2.0-linux-x64.tar  # Assuming filename is blender-4.2.0-linux-x64.tar.xz
+      - name: Install Blender (using dedicated action)
+        uses: brecht/action-blender@v5  # Official Blender action for easier installation
+        with:
+          version: '4.2.0'  # Replace with the Blender version you need
 
-          # wget https://www.blender.org/download/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz/
-          # tar xvf blender-4.2.0-linux-x64.tar.xz
-          export PATH="$PATH:/path/to/blender/blender"
-
-     
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt  # Install required Python libraries
 
       - name: Run Python Script
         run: python btest.py
 
-      # - name: Run Blender
-      #   run: blender -b test_drone.blend -P test_drone.py
+      - name: Run Blender (optional)
+        if: ${{ success() }}  # Only run Blender if previous steps succeed
+        uses: brecht/action-blender@v5
+        with:
+          version: '4.2.0'  # Matches Blender installation version
+          command: blender -b test_drone.blend -P test_drone.py  # Your Blender command
+
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #     name: blender-output  # Name your artifact for easier access
+      #     path: /path/to/your/blender/output  # Replace with the path containing the output files
