@@ -19,11 +19,9 @@ jobs:
       # Install Blender (replace with your preferred method)
       - name: Install Blender
         run: |
-          wget -c -O blender-4.2.0-linux-x64.tar https://ftp.halifax.rwth-aachen.de/blender/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz
-          tar -xvf blender-4.2.0-linux-x64.tar -C /home/runner/work/
-
-          export PATH="/home/runner/work/blender"
-
+          wget -c -O blender-4.2.0-linux-x64 https://ftp.halifax.rwth-aachen.de/blender/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz
+          mkdir /home/runner/work/chaitany
+          tar -xvf blender-4.2.0-linux-x64 -C /home/runner/work/chaitany
      
 
       - name: Run Python Script

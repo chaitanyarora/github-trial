@@ -4,8 +4,8 @@ import os
 
 cwd = os.path.dirname(os.path.abspath(__file__))
 
-blender_executable = "/home/runner/work/blender.exe"
-print("BUNTTUTBUBUD", os.environ.get("PATH"))
+blender_executable = r"/home/runner/work/chaitany/blender-4.2.0-linux-x64/blender.exe"
+print("BUNTTUTBUBUD", blender_executable)
 blend_file_paths = [os.path.join(cwd, 'test_drone.blend')]
 print("BLEND FILE PATH", blend_file_paths)
 test_script_paths = [os.path.join(cwd, 'test_drone.py')]
