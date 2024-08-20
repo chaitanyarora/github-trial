@@ -1,40 +1,32 @@
-# .github/workflows/blender.yml
-
-name: Blender CI
+name: Run Blender with Python Script
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  blender:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Set up Blender
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y blender
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
 
-    - name: Run Blender script
-      run: |
-        blender --background --python your_script.py
-      env:
-        BLENDER_USER_SCRIPTS: ${{ github.workspace }}/hello/hello_world.py
+      # Install Blender (replace with your preferred method)
+      - name: Install Blender
+        run: |
+          wget https://download.blender.org/release/Blender3.5/blender-3.5-linux-x86_64.tar.xz
+          tar xvf blender-3.5-linux-x86_64.tar.xz
+          export PATH="$PATH:/path/to/blender/blender"
 
-    - name: Render with Blender
-      run: |
-        blender -b your_scene.blend -o //output_image.png -F PNG -x 1 -f 1
+     
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: rendered-image
-        path: output_image.png
+      - name: Run Python Script
+        run: python btest.py
+
+      - name: Run Blender
+        run: blender -b test_drone.blend -P test_drone.py
