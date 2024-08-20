@@ -20,10 +20,8 @@ jobs:
       - name: Install Blender
         run: |
           wget -c -O blender-4.2.0-linux-x64.tar https://ftp.halifax.rwth-aachen.de/blender/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz
-          tar -xvf blender-4.2.0-linux-x64.tar  # Assuming filename is blender-4.2.0-linux-x64.tar.xz -C /home/runner/work/
+          tar -xvf blender-4.2.0-linux-x64.tar -C /home/runner/work/
 
-          # wget https://www.blender.org/download/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz/
-          # tar xvf blender-4.2.0-linux-x64.tar.xz
           export PATH="/home/runner/work/blender"
 
      
