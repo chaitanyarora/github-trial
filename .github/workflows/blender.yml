@@ -2,7 +2,7 @@ name: Run Blender with Python Script
 
 on:
   push:
-    branches: [ main ]  # Replace with your desired branches
+    branches: [ main, trial ]  # Replace with your desired branches
 
 jobs:
   build:
