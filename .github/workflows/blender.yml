@@ -1,0 +1,40 @@
+# .github/workflows/blender.yml
+
+name: Blender CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  blender:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Blender
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y blender
+
+    - name: Run Blender script
+      run: |
+        blender --background --python your_script.py
+      env:
+        BLENDER_USER_SCRIPTS: ${{ github.workspace }}/hello/hello_world.py
+
+    - name: Render with Blender
+      run: |
+        blender -b your_scene.blend -o //output_image.png -F PNG -x 1 -f 1
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: rendered-image
+        path: output_image.png
