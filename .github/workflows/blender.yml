@@ -28,7 +28,8 @@ jobs:
           sudo apt-get install libegl1-mesa
      
       - name: Install Addon
-        run: echo "Install Addon"
+        run: python install_plugin.py
 
-      - name: Test The Addon
+
+      - name: Test Addon
         run: python btest.py
