@@ -19,8 +19,11 @@ jobs:
       # Install Blender (replace with your preferred method)
       - name: Install Blender
         run: |
-          wget https://www.blender.org/download/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz/
-          tar xvf blender-4.2.0-linux-x64.tar.xz
+          wget -c -O blender.tar.xz https://www.blender.org/download/release/Blender4.2/
+          tar -xvf blender-4.2.0-linux-x64.tar.xz  # Assuming filename is blender-4.2.0-linux-x64.tar.xz
+
+          # wget https://www.blender.org/download/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz/
+          # tar xvf blender-4.2.0-linux-x64.tar.xz
           export PATH="$PATH:/path/to/blender/blender"
 
      
