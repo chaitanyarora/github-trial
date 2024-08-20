@@ -21,8 +21,8 @@ jobs:
         run: |
           pwd
           wget -c -O blender-4.2.0-linux-x64 https://ftp.halifax.rwth-aachen.de/blender/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz
-          mkdir /home/runner/work/chaitany
-          tar -xvf blender-4.2.0-linux-x64 -C /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64
+          # mkdir /home/runner/work/chaitany
+          tar -xvf blender-4.2.0-linux-x64
           echo "PARTY"
           ls
 
