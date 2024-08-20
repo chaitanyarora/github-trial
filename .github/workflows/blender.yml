@@ -2,7 +2,7 @@ name: Run Blender with Python Script
 
 on:
   push:
-    branches: [main]
+    branches: [main, trial]
 
 jobs:
   build:
