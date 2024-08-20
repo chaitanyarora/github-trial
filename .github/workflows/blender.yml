@@ -19,7 +19,6 @@ jobs:
       # - name: Install Python dependencies
       #   run: pip install -r requirements.txt 
 
-      # Install Blender (replace with your preferred method)
       - name: Install Blender
         run: |
           pwd
@@ -27,13 +26,9 @@ jobs:
           tar -xvf blender-4.2.0-linux-x64
           sudo apt-get update
           sudo apt-get install libegl1-mesa
-          cd blender-4.2.0-linux-x64
-          echo "Something"
-          pwd
-          ls
+     
+      - name: Install Addon
+        run: echo "Install Addon"
 
-      - name: Run Python Script
+      - name: Test The Addon
         run: python btest.py
-
-      # - name: Run Blender
-      #   run: blender -b test_drone.blend -P test_drone.py
