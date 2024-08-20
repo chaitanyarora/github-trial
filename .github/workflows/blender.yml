@@ -15,6 +15,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
+      
+      # - name: Install Python dependencies
+      #   run: pip install -r requirements.txt 
 
       # Install Blender (replace with your preferred method)
       - name: Install Blender
@@ -22,6 +25,7 @@ jobs:
           pwd
           wget -c -O blender-4.2.0-linux-x64 https://ftp.halifax.rwth-aachen.de/blender/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz
           tar -xvf blender-4.2.0-linux-x64
+          sudo apt-get install mesa libglu1-mesa
           cd blender-4.2.0-linux-x64
           echo "Something"
           pwd
