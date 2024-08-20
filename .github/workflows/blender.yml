@@ -30,7 +30,8 @@ jobs:
       - name: Install Scipy
         run: |
           cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
-          python -m pip install scipy
+          # python -m pip install --upgrade pip
+          sudo apt install python3-scipy
      
       - name: Install Addon
         run: python install_plugin.py
