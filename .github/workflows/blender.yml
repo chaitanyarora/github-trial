@@ -2,7 +2,7 @@ name: Run Blender with Python Script
 
 on:
   push:
-    branches: [ main, trial ]  # Replace with the branch(es) you want to trigger the workflow
+    branches: [ main ]  # Replace with your desired branches
 
 jobs:
   build:
@@ -14,12 +14,16 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'  # Replace with your desired Python version
+          python-version: '3.9'  # Replace with your preferred Python version
 
-      - name: Install Blender (using dedicated action)
-        uses: brecht/action-blender@v5  # Official Blender action for easier installation
-        with:
-          version: '4.2.0'  # Replace with the Blender version you need
+      - name: Locate Blender Installation (dynamic)
+        run: |
+          blender_path=$(find / -name blender -type f 2>/dev/null)  # Search for "blender" executable
+          if [[ -z "$blender_path" ]]; then
+            echo "Blender not found. Please install it manually."
+            exit 1
+          fi
+          export RAJU="$PATH:$blender_path/../"  # Extract directory containing blender.exe
 
       - name: Install Python dependencies
         run: pip install -r requirements.txt  # Install required Python libraries
@@ -28,13 +32,13 @@ jobs:
         run: python btest.py
 
       - name: Run Blender (optional)
-        if: ${{ success() }}  # Only run Blender if previous steps succeed
-        uses: brecht/action-blender@v5
-        with:
-          version: '4.2.0'  # Matches Blender installation version
-          command: blender -b test_drone.blend -P test_drone.py  # Your Blender command
+        if: ${{ success() }}  # Only run if previous steps succeed
+          uses: brecht/action-blender@v5  # Official Blender action for easier execution
+          with:
+            version: '4.2.0'  # Replace with the Blender version you need (optional)
+            command: blender -b test_drone.blend -P test_drone.py  # Your Blender command
 
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: blender-output  # Name your artifact for easier access
-      #     path: /path/to/your/blender/output  # Replace with the path containing the output files
+      - uses: actions/upload-artifact@v3
+        with:
+          name: blender-output  # Name your artifact for easier access
+          path: /path/to/your/blender/output  # Replace with the path containing the output files
