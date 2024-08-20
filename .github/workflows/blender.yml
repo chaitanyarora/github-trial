@@ -31,13 +31,7 @@ jobs:
       - name: Run Python Script
         run: python btest.py
 
-      - name: Run Blender (optional)
-        if: ${{ success() }}  # Only run if previous steps succeed
-          uses: brecht/action-blender@v5  # Official Blender action for easier execution
-          with:
-            version: '4.2.0'  # Replace with the Blender version you need (optional)
-            command: blender -b test_drone.blend -P test_drone.py  # Your Blender command
-
+      
       - uses: actions/upload-artifact@v3
         with:
           name: blender-output  # Name your artifact for easier access
