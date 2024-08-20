@@ -4,11 +4,11 @@ import os
 
 cwd = os.path.dirname(os.path.abspath(__file__))
 
-blender_executable = os.environ.get("PATH")
+blender_executable = "/home/runner/work/blender.exe"
 print("BUNTTUTBUBUD", os.environ.get("PATH"))
-blend_file_paths = [os.path.join(cwd, 'test_input', 'test_drone.blend')]
+blend_file_paths = [os.path.join(cwd, 'test_drone.blend')]
 print("BLEND FILE PATH", blend_file_paths)
-test_script_paths = [os.path.join(cwd, 'test_cases', 'test_drone.py')]
+test_script_paths = [os.path.join(cwd, 'test_drone.py')]
 print("TEST SC FILE PATH", test_script_paths)
 
 def test():
