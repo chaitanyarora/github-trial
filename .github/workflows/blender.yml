@@ -15,22 +15,27 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-      
-      # - name: Install Python dependencies
-      #   run: pip install -r requirements.txt 
-
+  
       - name: Install Blender
         run: |
-          pwd
           wget -c -O blender-4.2.0-linux-x64 https://ftp.halifax.rwth-aachen.de/blender/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz
           tar -xvf blender-4.2.0-linux-x64
+
           sudo apt-get update
           sudo apt-get install libegl1-mesa
       
       - name: Install Scipy
         run: |
-          /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin/python.exe
-          # cd 
+          cd /home/runner/work/github-trial/github-trial
+          echo Bhai
+          ls
+          cd blender-4.2.0-linux-x64/4.2
+          echo Hai
+          ls
+          cd python/bin
+          echo Tu
+          ls
+           
           python -m pip install --target "/home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/lib/site-packages" scipy
 
           # export /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
