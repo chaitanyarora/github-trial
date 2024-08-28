@@ -29,7 +29,7 @@ jobs:
       
       - name: Install Scipy
         run: |
-          cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin/python
+          cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin/python.exe
           # cd 
           python -m pip install --target "/home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/lib/site-packages" scipy
 
