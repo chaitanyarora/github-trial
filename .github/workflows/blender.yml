@@ -19,13 +19,16 @@ jobs:
 
       - name: Install Python dependencies (if needed)
         run: |
+          cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
           pwd
           python -m pip install --target "/home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/lib/site-packages" scipy
+          echo "BUNYT"
+          pwd
 
       - name: Install Blender Addon from .zip
         run: |
           pwd
-          cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
+          cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64
           ./blender --background --python-expr "
           import bpy
           import os
