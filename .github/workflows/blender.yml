@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout codes
         uses: actions/checkout@v3
 
       - name: Download Blender (if not included in the repository)
@@ -42,7 +42,10 @@ jobs:
 
       - name: Run install_addon.py in Blender
         run: |
-          cd /home/runner/work/github-trial/github-trial/
-          ls
           cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64
           ./blender --background --python ../install_addon.py
+
+      - name: Test Drone
+        run: |
+          cd /home/runner/work/github-trial/github-trial
+          python btest.py
