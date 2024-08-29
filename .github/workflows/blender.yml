@@ -22,7 +22,7 @@ jobs:
 
       - name: Install Blender Addon from .zip
         run: |
-          cd blender-4.2.0-linux-x64/4.2/python/bin
+          cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
           ./blender --background --python-expr "
           import bpy
           import os
