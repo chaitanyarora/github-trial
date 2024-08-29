@@ -32,7 +32,7 @@ jobs:
           ./blender --background --python-expr "
           import bpy
           import os
-          addon_path = os.path.join(os.getcwd(), "/home/runner/work/github-trial/github-trial/animation_tool.zip")
+          addon_path = os.path.join(os.getcwd(), '/home/runner/work/github-trial/github-trial/animation_tool.zip')
           bpy.ops.wm.addon_install(filepath=addon_path)
           bpy.ops.wm.addon_enable(module='Metadata Beta 1.5.2')
           bpy.ops.wm.save_userpref()
