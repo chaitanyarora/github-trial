@@ -31,18 +31,14 @@ jobs:
           import os
           import time
 
-          time.sleep(5)  # Add delay to ensure Blender initializes
+          time.sleep(15)  # Add delay to ensure Blender initializes
           
           addon_path = '/home/runner/work/github-trial/github-trial/animation_tool.zip'
-          print(f'Installing addon from {addon_path}')
-          
-          if os.path.exists(addon_path):
-              bpy.ops.wm.addon_install(filepath=addon_path)
-              bpy.ops.wm.addon_enable(module='animation_tool')
-              bpy.ops.wm.save_userpref()
-              print('Addon installed successfully')
-          else:
-              print(f'Addon path {addon_path} does not exist!')
+       
+
+          bpy.ops.preferences.addon_install(filepath=addon_path)
+          addon_name = "animation_tool"
+          bpy.ops.preferences.addon_enable(module=addon_name)
           " > install_addon.py
 
       - name: Run install_addon.py in Blender
