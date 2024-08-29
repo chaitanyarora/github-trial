@@ -15,8 +15,7 @@ jobs:
           wget https://download.blender.org/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz
           tar -xf blender-4.2.0-linux-x64.tar.xz
           ls -la blender-4.2.0-linux-x64
-          pwd
-
+      
       - name: Install Python dependencies (if needed)
         run: |
           cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
@@ -25,15 +24,21 @@ jobs:
           echo "BUNYT"
           pwd
 
-      - name: Install Blender Addon from .zip
+      - name: Create install_addon.py script
         run: |
-          pwd
-          cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64
-          ./blender --background --python-expr "
+          echo "
           import bpy
           import os
-          addon_path = os.path.join(os.getcwd(), '/home/runner/work/github-trial/github-trial/animation_tool.zip')
+
+          addon_path = '/home/runner/work/github-trial/github-trial/animation_tool.zip'
+          print(f'Installing addon from {addon_path}')
           bpy.ops.wm.addon_install(filepath=addon_path)
-          bpy.ops.wm.addon_enable(module='Metadata Beta 1.5.2')
+          bpy.ops.wm.addon_enable(module='animation_tool')
           bpy.ops.wm.save_userpref()
-          print('Addon installed successfully')"
+          print('Addon installed successfully')
+          " > install_addon.py
+
+      - name: Run install_addon.py in Blender
+        run: |
+          cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
+          ./blender --background --python ../../../../install_addon.py
