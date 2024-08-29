@@ -40,5 +40,5 @@ jobs:
 
       - name: Run install_addon.py in Blender
         run: |
-          cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
-          ./blender --background --python ../../../../install_addon.py
+          cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64
+          ./blender --background --python ../install_addon.py
