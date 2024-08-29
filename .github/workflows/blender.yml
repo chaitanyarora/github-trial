@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-  
+      
       - name: Install Blender
         run: |
           wget -c -O blender-4.2.0-linux-x64 https://ftp.halifax.rwth-aachen.de/blender/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz
@@ -24,21 +24,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install libegl1-mesa
       
-      - name: Install Scipy
+      - name: Run command in a specific directory
+        run: echo "Running command in a specific directory"
+        working-directory: /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
+      
+      - name: Install scipy in specified directory
         run: |
           cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
-          python3.11 -m pip install --upgrade pip
-            
-          python3.11 -m pip install --target "/home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/lib/site-packages" scipy
-
-          # export /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
-          # cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
-          # # ls
-          # # python -m pip install --upgrade pip
-          # sudo apt-get install python3-scipy 
-          # # python -m pip install scipy
-
-
+          python -m pip install --target "/home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/lib/site-packages" scipy
 
       - name: Install Addon
         run: python install_plugin.py
