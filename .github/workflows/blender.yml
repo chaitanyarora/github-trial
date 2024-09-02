@@ -23,6 +23,9 @@ jobs:
           python -m pip install --target "/home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/lib/site-packages" scipy
           echo "BUNYT"
           pwd
+      
+      - name: Just
+        run: 
 
       - name: Create install_addon.py script
         run: |
