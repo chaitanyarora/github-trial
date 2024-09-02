@@ -39,7 +39,7 @@ jobs:
        
 
           bpy.ops.preferences.addon_install(filepath=addon_path)
-          bpy.ops.preferences.addon_enable(module=f"Metadata Beta 1.5.2")
+          bpy.ops.preferences.addon_enable(module="animation_tool.zip")
           " > install_addon.py
 
       - name: Run install_addon.py in Blender
