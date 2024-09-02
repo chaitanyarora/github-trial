@@ -20,7 +20,7 @@ jobs:
           cd /home/runner/work/github-trial
           ls
           pwd
-          cd /home/runner/work/github-trial/github-trial
+          cd /home/runner/work/github-trial/blender-4.2.0-linux-x64/blender-4.2.0-linux-x64/4.2/python/bin
           ls
           pwd
           /blender-4.2.0-linux-x64/4.2/python/bin/python3.11 -m pip install --target "/home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/lib/site-packages" scipy
