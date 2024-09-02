@@ -17,16 +17,10 @@ jobs:
       
       - name: Install Python dependencies (if needed)
         run: |
-          cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin
-          ls
           pwd
-          cd /home/runner/work/github-trial/blender-4.2.0-linux-x64/blender-4.2.0-linux-x64/4.2/python/bin
-          ls
-          pwd
+          cd /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin/python3.11
+          
           /blender-4.2.0-linux-x64/4.2/python/bin/python3.11 -m pip install --target "/home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/lib/site-packages" scipy
-          pwd
-      
-      
 
       - name: Create install_addon.py script
         run: |
