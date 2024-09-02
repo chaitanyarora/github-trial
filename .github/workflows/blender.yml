@@ -24,8 +24,7 @@ jobs:
           echo "BUNYT"
           pwd
       
-      - name: Just
-        run: 
+      
 
       - name: Create install_addon.py script
         run: |
