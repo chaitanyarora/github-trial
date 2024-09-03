@@ -1,0 +1,21 @@
+name: Blender Tests
+
+on: [push]
+
+jobs:
+  install-addon:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout codes
+        uses: actions/checkout@v3
+
+      - name: Download Blender
+        run: |
+          wget https://download.blender.org/release/Blender4.2/blender-4.2.0-linux-x64.tar.xz
+          tar -xf blender-4.2.0-linux-x64.tar.xz
+      
+      - name: Install Python Scipy
+        run: |
+          pwd
+
