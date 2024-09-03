@@ -19,8 +19,15 @@ jobs:
         run: |
           pwd
           blender-4.2.0-linux-x64/4.2/python/bin/python3.11 -m pip install --target "blender-4.2.0-linux-x64/4.2/python/lib/site-packages" scipy
-
+          #Update pip
+          /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin/python3.11 -m pip install --upgrade pip
           echo "SPACE"
           cd blender-4.2.0-linux-x64/4.2/python/lib/site-packages
+          ls
+        
+      - name: Download Animation Toop .zip file
+        run: |
+          pwd  
+          wget https://github.com/BotLabDynamics/animation_tool/archive/refs/heads/main.zip
           ls
           
