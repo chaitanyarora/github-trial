@@ -18,8 +18,5 @@ jobs:
       - name: Install Python Scipy
         run: |
           pwd
-          ls
-          cd blender-4.2.0-linux-x64/4.2/python/bin
-          echo "Helllo"
-          ls
-
+          blender-4.2.0-linux-x64/4.2/python/bin/python3.11 bunty.py
+          
