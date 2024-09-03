@@ -21,17 +21,6 @@ jobs:
 
           ls /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2
 
-          
-
-          python -m pip install --target "blender-4.2.0-linux-x64/4.2/python3.11/lib/site-packages" scipy
-          
-          ls blender-4.2.0-linux-x64/4.2/python/lib/site-packages
-          echo "BHAIAIIAAI"
-          /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/blender  --background --python-expr "
-          import bpy
-
-          bpy.ops.preferences.addon_install(filepath='/home/runner/work/github-trial/github-trial/animation_tool.zip')
-          bpy.ops.preferences.addon_enable(module='animation_tool')"
         
       
           
