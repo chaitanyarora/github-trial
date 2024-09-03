@@ -2,13 +2,13 @@ import subprocess
 import os
 
 cwd = os.path.dirname(os.path.abspath(__file__))
-print(cwd)
+print('1', cwd)
 
-blender_executable = r"/home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/blender-launcher"
+blender_executable = r"/home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/blender"
 blend_file_paths = [os.path.join(cwd, 'test_drone.blend')]
-print(blend_file_paths)
+print('2', blend_file_paths)
 test_script_paths = [os.path.join(cwd, 'test_drone.py')]
-print(test_script_paths)
+print('3', test_script_paths)
 
 
 def test():
