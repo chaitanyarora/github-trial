@@ -29,10 +29,8 @@ jobs:
           bpy.ops.preferences.addon_enable(module='animation_tool')
           "
 
-      - name: Run btest.py
-        run: |
           python btest.py
-          
+
 
           
           
