@@ -24,7 +24,7 @@ jobs:
 
           blender-4.2.0-linux-x64/4.2/python/bin/python3.11 -m pip install --target "blender-4.2.0-linux-x64/4.2/python/lib/site-packages" scipy
           
-          pwd
+          ls blender-4.2.0-linux-x64/4.2/python/lib/site-packages
 
           /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/blender  --background --python-expr "
           import bpy
