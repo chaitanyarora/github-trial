@@ -23,7 +23,7 @@ jobs:
           ls blender-4.2.0-linux-x64/4.2/python/bin/
           
           echo "2"
-          ls blender-4.2.0-linux-x64/4.2/python
+          ls blender-4.2.0-linux-x64/4.2/python/lib/
           
           
           
