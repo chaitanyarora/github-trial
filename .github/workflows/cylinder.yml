@@ -35,7 +35,7 @@ jobs:
           /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/blender  --background --python-expr "
           import bpy
 
-          path_to_zip=f"/home/runner/work/github-trial/github-trial/"
+          path_to_zip='/home/runner/work/github-trial/github-trial/'
 
           bpy.ops.preferences.addon_install(filepath=path_to_zip)
           bpy.ops.preferences.addon_enable(module="animation_tool")"
