@@ -19,7 +19,7 @@ jobs:
         run: |
           pwd
 
-          ls /blender-4.2.0-linux-x64/4.2/python/bin/
+          ls /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin/
 
           #Update pip
           /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin/python3.11 -m pip3 install --upgrade pip
