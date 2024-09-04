@@ -20,6 +20,7 @@ import os
 # Section: Drone Setup
 
 # Part 1: (Inputs)
+print("BUNTY", bpy.context.scene.my_tool.drone.total_spheres)
 bpy.context.scene.my_tool.drone.total_spheres = 20
 bpy.context.scene.my_tool.drone.total_rows = 10
 bpy.context.scene.my_tool.drone.x_diff = 1.00
