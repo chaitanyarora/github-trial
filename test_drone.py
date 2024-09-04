@@ -21,7 +21,7 @@ import os
 
 # Part 1: (Inputs)
 
-
+bpy.ops.preferences.addon_enable(module='animation_tool')
 # Get a list of all enabled add-ons
 enabled_addons = bpy.context.preferences.addons.keys()
 
