@@ -3,6 +3,12 @@ from datetime import datetime
 import os
 
 
+bpy.ops.preferences.addon_enable(module='animation_tool')
+enabled_addons = bpy.context.preferences.addons.keys()
+for addon in enabled_addons:
+    print(addon)
+
+
 # Iterate over all registered classes
 for cls in bpy.types.Panel.__subclasses__():
     if 'Drone Setup (' in cls.bl_label: 
@@ -24,10 +30,7 @@ log_file = os.path.join(cwd, f'test_report_{version}.txt')
 
 # Part 1: (Inputs)
 
-bpy.ops.preferences.addon_enable(module='animation_tool')
-enabled_addons = bpy.context.preferences.addons.keys()
-for addon in enabled_addons:
-    print(addon)
+
 
 
 bpy.context.scene.my_tool.drone.total_spheres = 20
