@@ -31,6 +31,12 @@ jobs:
 
           python btest.py
 
+      - name: Test Done
+        run: |
+          git add .
+          git commit -m "Log File Updated"
+          git push
+
 
           
           
