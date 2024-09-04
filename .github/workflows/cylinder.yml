@@ -33,6 +33,8 @@ jobs:
 
       - name: Test Done
         run: |
+          git config --global user.email "arorachaitany15@gmail.com"
+          git config --global user.name "chaitanyaroraa"
           git add .
           git commit -m "Log File Updated"
           git push
