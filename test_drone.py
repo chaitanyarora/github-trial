@@ -13,6 +13,7 @@ for addon in enabled_addons:
 for cls in bpy.types.Panel.__subclasses__():
     if 'Drone Setup (' in cls.bl_label: 
         version = (cls.bl_label.split('(')[1][:-1])
+        print(version)
 
 cwd = os.path.dirname(os.path.abspath(__file__))
 
@@ -62,6 +63,7 @@ if len(bpy.data.collections)==0:
     print("BHAI HAIIIIIII partyyyy")
     timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
     with open(log_file, 'a') as file:
+        print("YOOOOOOOOYOYOYOY")
         file.write(f'{timestamp} Test passed ✅ - reset\n')
 else:
     print("BHAI HAIIIIIII NOOOO")
