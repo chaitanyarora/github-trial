@@ -10,7 +10,10 @@ for cls in bpy.types.Panel.__subclasses__():
 
 cwd = os.path.dirname(os.path.abspath(__file__))
 
+print("pehla", cwd)
+
 cwd = os.path.abspath(os.path.join(cwd, os.pardir, os.pardir))
+print("pehla", cwd)
 
 # Create a file 
 log_file = os.path.join(cwd, f'test_report_{version}.txt')
