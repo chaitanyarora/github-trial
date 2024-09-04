@@ -18,7 +18,7 @@ cwd = os.path.dirname(os.path.abspath(__file__))
 
 print("pehla", cwd)
 
-cwd = os.path.abspath(os.path.join(cwd, os.pardir, os.pardir))
+# cwd = os.path.abspath(os.path.join(cwd, os.pardir, os.pardir))
 print("pehla", cwd)
 
 # Create a file 
