@@ -20,6 +20,17 @@ import os
 # Section: Drone Setup
 
 # Part 1: (Inputs)
+
+
+# Get a list of all enabled add-ons
+enabled_addons = bpy.context.preferences.addons.keys()
+
+# Print the names of all enabled add-ons
+for addon in enabled_addons:
+    print(addon)
+
+
+
 print("BUNTY", bpy.context.scene.my_tool.drone.total_spheres)
 bpy.context.scene.my_tool.drone.total_spheres = 20
 bpy.context.scene.my_tool.drone.total_rows = 10
