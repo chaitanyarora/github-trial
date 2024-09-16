@@ -40,7 +40,7 @@ jobs:
           git config --global user.name "chaitanyaroraa"
           git add .
           git commit -m "Log File Updated"
-          git push
+          git push --force
 
 
           
