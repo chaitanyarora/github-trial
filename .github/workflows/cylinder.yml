@@ -6,6 +6,7 @@ jobs:
   install-addon:
     runs-on: ubuntu-latest
 
+    
     steps:
       - name: Checkout codes
         uses: actions/checkout@v3
@@ -17,6 +18,8 @@ jobs:
       
       - name: Install Python Scipy
         run: |
+          
+          echo "HELLO"
           
           
           /home/runner/work/github-trial/github-trial/blender-4.2.0-linux-x64/4.2/python/bin/python3.11 -m pip install --upgrade pip
